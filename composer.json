@@ -9,15 +9,14 @@
             "email": "schmittrink@gmail.com"
         }
     ],
-    "require": {
-        "satooshi/php-coveralls": "^0.6.1"
-    },
+    "require": {},
     "require-dev": {
         "phpmd/phpmd": "2.3.*",
         "phpunit/phpunit": "5.0.*",
         "sami/sami": "3.*",
         "sebastian/phpcpd": "2.0.*",
-        "squizlabs/php_codesniffer": "2.3.*"
+        "squizlabs/php_codesniffer": "2.3.*",
+        "satooshi/php-coveralls": "^0.6.1"
     },
     "autoload": {
         "psr-4": {
