@@ -9,7 +9,9 @@
             "email": "schmittrink@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "satooshi/php-coveralls": "^0.6.1"
+    },
     "require-dev": {
         "phpmd/phpmd": "2.3.*",
         "phpunit/phpunit": "5.0.*",
