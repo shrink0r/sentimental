@@ -25,7 +25,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Shrink0r\\Sentimental\\Tests//": "tests/unit"
+            "Shrink0r\\Sentimental\\Tests\\": "tests/unit"
          }
     }
 }
