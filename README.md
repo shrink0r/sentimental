@@ -6,3 +6,5 @@
 [![Dependency Status](https://www.versioneye.com/user/projects/563e8cdd4d415e001e000371/badge.svg?style=flat)](https://www.versioneye.com/user/projects/563e8cdd4d415e001e000371)
 
 Multinomial naive bayesian classifier for php.
+
+Small project I used to understand bayesian naive classifiers.
