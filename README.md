@@ -7,4 +7,4 @@
 
 Multinomial naive bayesian classifier for php.
 
-Small project I used to understand naive bayesian classifiers.
+Small lib that I implemented while learning naive bayesian classification.
