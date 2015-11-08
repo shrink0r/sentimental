@@ -5,7 +5,7 @@ namespace Shrink0r\Sentimental\Classifier;
 use Shrink0r\Sentimental\Data\AnnotationGuard;
 use Shrink0r\Sentimental\Data\DataSetInterface;
 
-class Evaluation
+class Evaluation implements EvaluationInterface
 {
     protected $classifier;
 
@@ -14,7 +14,7 @@ class Evaluation
         $this->classifier = $classifier;
     }
 
-    public function evaluate(DataSetInterface $data_set)
+    public function generateResult(DataSetInterface $data_set)
     {
         $guarded_data = new AnnotationGuard($data_set);
         $class_stats = [];
