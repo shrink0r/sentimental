@@ -3,7 +3,7 @@
 namespace Shrink0r\Sentimental\Data;
 
 use ArrayIterator;
-use Shrink0r\Sentimental\Data\Record;
+use Shrink0r\Sentimental\Data\Document;
 
 class DictionaryInclude implements DataSetInterface
 {
@@ -25,7 +25,7 @@ class DictionaryInclude implements DataSetInterface
         $iterator = new ArrayIterator($this->data);
 
         foreach ($iterator as $catalog_item) {
-            yield new Record($catalog_item, $this->class);
+            yield new Document($catalog_item, $this->class);
         }
     }
 

@@ -5,7 +5,7 @@ namespace Shrink0r\Sentimental\Tests\Feature;
 use Shrink0r\Sentimental\Data\AnnotationGuard;
 use Shrink0r\Sentimental\Data\DataSetInterface;
 use Shrink0r\Sentimental\Data\DictionaryInclude;
-use Shrink0r\Sentimental\Data\Record;
+use Shrink0r\Sentimental\Data\Document;
 
 class AnnotationGuardTest extends \PHPUnit_Framework_TestCase
 {
@@ -35,10 +35,10 @@ class AnnotationGuardTest extends \PHPUnit_Framework_TestCase
         $dataset = new AnnotationGuard(new DictionaryInclude(__DIR__ . '/Fixture/dictionary.php', self::FIX_CLASS));
         $actual_count = 0;
 
-        foreach ($dataset as $record) {
+        foreach ($dataset as $document) {
             $actual_count++;
-            $this->assertTrue($record->isAnnotated());
-            $this->assertEquals(self::FIX_CLASS, $record->getClass());
+            $this->assertTrue($document->isAnnotated());
+            $this->assertEquals(self::FIX_CLASS, $document->getClass());
         }
         $this->assertEquals(self::FIX_RECORD_CNT, $actual_count);
     }

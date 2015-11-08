@@ -31,10 +31,10 @@ class DictionaryIncludeTest extends \PHPUnit_Framework_TestCase
         $dataset = new DictionaryInclude(__DIR__ . '/Fixture/dictionary.php', self::FIX_CLASS);
         $actual_count = 0;
 
-        foreach ($dataset as $record) {
+        foreach ($dataset as $document) {
             $actual_count++;
-            $this->assertTrue($record->isAnnotated());
-            $this->assertEquals(self::FIX_CLASS, $record->getClass());
+            $this->assertTrue($document->isAnnotated());
+            $this->assertEquals(self::FIX_CLASS, $document->getClass());
         }
         $this->assertEquals(self::FIX_RECORD_CNT, $actual_count);
     }

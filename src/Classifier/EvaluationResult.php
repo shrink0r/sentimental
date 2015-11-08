@@ -2,7 +2,7 @@
 
 namespace Shrink0r\Sentimental\Classifier;
 
-class Stats
+class EvaluationResult
 {
     protected $total_stats;
 

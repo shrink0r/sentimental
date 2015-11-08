@@ -6,16 +6,16 @@ class FrequencyTable
 {
     protected $feature_frequencies;
 
-    protected $record_frequencies;
+    protected $document_frequencies;
 
-    public function __construct(FeatureFrequencies $feature_frequencies, RecordFrequencies $record_frequencies)
+    public function __construct(FeatureFrequencies $feature_frequencies, DocumentFrequencies $document_frequencies)
     {
         $this->feature_frequencies = $feature_frequencies;
-        $this->record_frequencies = $record_frequencies;
-        // pre calculate the prior-probabilities, based on the plain record/class ratio before any data is seen.
+        $this->document_frequencies = $document_frequencies;
+        // pre calculate the prior-probabilities, based on the plain document/class ratio before any data is seen.
         $this->prior_probabilities = [];
         foreach($this->getSupportedClasses() as $class) {
-            $this->prior_probabilities[$class] = $this->getRecordFrequency($class) / $this->getTotalRecordCount();
+            $this->prior_probabilities[$class] = $this->getDocumentFrequency($class) / $this->getTotalDocumentCount();
         }
     }
 
@@ -44,9 +44,9 @@ class FrequencyTable
         return $this->feature_frequencies->getFrequency($feature, $class);
     }
 
-    public function getRecordFrequency($class)
+    public function getDocumentFrequency($class)
     {
-        return $this->record_frequencies->getFrequency($class);
+        return $this->document_frequencies->getFrequency($class);
     }
 
     public function getTotalFeatureCount()
@@ -54,14 +54,14 @@ class FrequencyTable
         return $this->feature_frequencies->getTotalCount();
     }
 
-    public function getTotalRecordCount()
+    public function getTotalDocumentCount()
     {
-        return $this->record_frequencies->getTotalCount();
+        return $this->document_frequencies->getTotalCount();
     }
 
     public function getDocFrequencies()
     {
-        return $this->record_frequencies;
+        return $this->document_frequencies;
     }
 
     public function getFeatureFrequencies()

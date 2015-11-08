@@ -4,5 +4,5 @@ namespace Shrink0r\Sentimental\Feature;
 
 interface FeatureExtractionInterface
 {
-    public function extract($record);
+    public function extract($document);
 }

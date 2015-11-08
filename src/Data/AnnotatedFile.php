@@ -2,7 +2,7 @@
 
 namespace Shrink0r\Sentimental\Data;
 
-use Shrink0r\Sentimental\Data\Record;
+use Shrink0r\Sentimental\Data\Document;
 use SplFileObject;
 
 class AnnotatedFile implements DataSetInterface
@@ -27,7 +27,7 @@ class AnnotatedFile implements DataSetInterface
             // for the following content
             $content = $file->fgets();
 
-            yield new Record(trim($content), trim($class));
+            yield new Document(trim($content), trim($class));
         }
     }
 

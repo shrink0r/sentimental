@@ -2,7 +2,7 @@
 
 namespace Shrink0r\Sentimental\Classifier\NaiveBayes;
 
-class RecordFrequencies
+class DocumentFrequencies
 {
     protected $frequencies = [];
 

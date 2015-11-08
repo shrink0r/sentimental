@@ -2,7 +2,7 @@
 
 namespace Shrink0r\Sentimental\Data;
 
-class Record implements RecordInterface
+class Document implements DocumentInterface
 {
     protected $class;
 

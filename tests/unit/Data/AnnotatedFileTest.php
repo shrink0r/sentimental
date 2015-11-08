@@ -31,9 +31,9 @@ class AnnotatedFileTest extends \PHPUnit_Framework_TestCase
         $dataset = new AnnotatedFile(__DIR__ . '/Fixture/annotated.txt');
         $actual_count = 0;
 
-        foreach ($dataset as $record) {
+        foreach ($dataset as $document) {
             $actual_count++;
-            $this->assertTrue($record->isAnnotated());
+            $this->assertTrue($document->isAnnotated());
         }
         $this->assertEquals(self::FIX_RECORD_CNT, $actual_count);
     }

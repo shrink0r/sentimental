@@ -2,7 +2,7 @@
 
 namespace Shrink0r\Sentimental\Data;
 
-interface RecordInterface
+interface DocumentInterface
 {
     public function getClass();
 

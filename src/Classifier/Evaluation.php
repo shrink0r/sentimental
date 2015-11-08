@@ -5,7 +5,7 @@ namespace Shrink0r\Sentimental\Classifier;
 use Shrink0r\Sentimental\Data\AnnotationGuard;
 use Shrink0r\Sentimental\Data\DataSetInterface;
 
-class QualitityTest
+class Evaluation
 {
     protected $classifier;
 
@@ -19,13 +19,13 @@ class QualitityTest
         $guarded_data = new AnnotationGuard($data_set);
         $class_stats = [];
 
-        foreach ($guarded_data as $testing_record) {
-            $expected_class = $testing_record->getClass();
+        foreach ($guarded_data as $testing_document) {
+            $expected_class = $testing_document->getClass();
             if (!isset($class_stats[$expected_class])) {
                 $class_stats[$expected_class] = [ 'hits' => 0, 'misses' => 0 ];
             }
 
-            $probable_class = $this->classifier->classify($testing_record->getContent());
+            $probable_class = $this->classifier->classify($testing_document->getContent());
             if ($expected_class === $probable_class) {
                 $class_stats[$expected_class]['hits']++;
             } else {

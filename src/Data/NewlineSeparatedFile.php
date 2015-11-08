@@ -2,7 +2,7 @@
 
 namespace Shrink0r\Sentimental\Data;
 
-use Shrink0r\Sentimental\Data\Record;
+use Shrink0r\Sentimental\Data\Document;
 use SplFileObject;
 
 class NewlineSeparatedFile implements DataSetInterface
@@ -26,7 +26,7 @@ class NewlineSeparatedFile implements DataSetInterface
 
         while (!$file->eof()) {
             $content = trim($file->fgets());
-            yield new Record($content, $this->class);
+            yield new Document($content, $this->class);
         }
     }
 

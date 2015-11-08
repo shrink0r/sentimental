@@ -9,25 +9,25 @@ class ClassificationTrainer
 {
     public static function train(array $training_sets, FeatureExtractionInterface $feature_extraction)
     {
-        $record_count = 0;
+        $document_count = 0;
         $feature_count = 0;
         $feature_freq = [];
         $class_freq = [];
-        $record_freq = [];
+        $document_freq = [];
 
         foreach ($training_sets as $data_set) {
             $guarded_data = new AnnotationGuard($data_set);
-            foreach ($guarded_data as $training_record) {
-                // set record stats
-                $class = $training_record->getClass();
-                $record_count++;
-                if(!isset($record_freq[$class])) {
-                    $record_freq[$class] = 0;
+            foreach ($guarded_data as $training_document) {
+                // set document stats
+                $class = $training_document->getClass();
+                $document_count++;
+                if(!isset($document_freq[$class])) {
+                    $document_freq[$class] = 0;
                 }
-                $record_freq[$class]++;
+                $document_freq[$class]++;
 
                 // set feature stats
-                $features = $feature_extraction->extract($training_record->getContent());
+                $features = $feature_extraction->extract($training_document->getContent());
                 foreach($features as $feature) {
                     $feature_count++;
                     if(!isset($feature_freq[$feature][$class])) {
@@ -46,7 +46,7 @@ class ClassificationTrainer
             $feature_extraction,
             new FrequencyTable(
                 new FeatureFrequencies($feature_freq, $class_freq, $feature_count),
-                new RecordFrequencies($record_freq, $record_count)
+                new DocumentFrequencies($document_freq, $document_count)
             )
         );
     }

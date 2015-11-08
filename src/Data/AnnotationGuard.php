@@ -3,7 +3,7 @@
 namespace Shrink0r\Sentimental\Data;
 
 use RuntimeException;
-use Shrink0r\Sentimental\Data\Record;
+use Shrink0r\Sentimental\Data\Document;
 
 class AnnotationGuard implements DataSetInterface
 {
@@ -16,11 +16,11 @@ class AnnotationGuard implements DataSetInterface
 
     public function getIterator()
     {
-        foreach ($this->guarded_data as $record) {
-            if ($record->isAnnotated()) {
-                yield $record;
+        foreach ($this->guarded_data as $document) {
+            if ($document->isAnnotated()) {
+                yield $document;
             } else {
-                throw new RuntimeException('Given record is not annotated!');
+                throw new RuntimeException('Given document is not annotated!');
             }
         }
     }
