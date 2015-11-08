@@ -20,12 +20,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Shrink0r\\Sentimental\\": "src"
+            "Shrink0r\\Sentimental\\": "src/"
          }
     },
     "autoload-dev": {
         "psr-4": {
-            "Shrink0r\\Sentimental\\Tests\\": "tests/unit"
+            "Shrink0r\\Sentimental\\Tests\\": "tests/unit/"
          }
     }
 }
