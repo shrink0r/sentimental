@@ -33,6 +33,6 @@ class Evaluation implements EvaluationInterface
             }
         }
 
-        return new Stats($class_stats);
+        return new EvaluationResult($class_stats);
     }
 }
